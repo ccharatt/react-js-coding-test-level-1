@@ -46,22 +46,22 @@ table {
   border-collapse: collapse;
   background-color: beige;
   margin-bottom: 10px;
-  border-radius: 10px;
 }
 
 td,th {
   padding: 0.7rem;
   border-bottom: 1px solid salmon;
-  text-align: center;
 }
 
 th {
   background-color: bisque;
   color: salmon;
+  text-align: center;
 }
 
 td {
   color: rgb(0, 158, 105);
+  text-align: left;
 }
 
 .flex {
