@@ -28,6 +28,131 @@
   color: #61dafb;
 }
 
+.pokemon {
+  cursor: pointer;
+  text-transform: capitalize;
+  border: 2px solid whitesmoke;
+  width: 20rem;
+  text-align: center;
+  padding: 0.3rem;
+  border-radius: 5px;
+}
+
+.pokemon:hover {
+  color:rgb(255, 255, 143);
+}
+
+table {
+  border-collapse: collapse;
+  background-color: beige;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+td,th {
+  padding: 0.7rem;
+  border-bottom: 1px solid salmon;
+  text-align: center;
+}
+
+th {
+  background-color: bisque;
+  color: salmon;
+}
+
+td {
+  color: rgb(0, 158, 105);
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.pdf {
+  margin-top: 1rem;
+  background-color:#82ca9d;
+  color:white;
+}
+
+.container {
+  display:flex;
+  flex-direction: column;
+  gap:0.7rem;
+  align-items: center;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap:1rem;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.paginationItem {
+  background:rgb(255, 255, 255);
+  border: 2px solid salmon;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  position: relative;
+  cursor: pointer;
+  color: black;
+}
+
+button {
+  border: none;
+  border-radius: 50%;
+  color:rgb(255, 255, 255);
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px;
+}
+
+.prev,
+.next {
+  background: rgb(247, 169, 169);
+  border: 2px solid rgb(255, 255, 255);
+  color: black;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.paginationItem.active {
+  border: 1px solid white;
+  color: black;
+  pointer-events: none;
+  background: salmon;
+}
+
+.prev.disabled,
+.next.disabled {
+  pointer-events: none;
+  box-shadow: none;
+  color: white;
+}
+
+.search {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.search input,.search select {
+  width: 5rem;
+  padding: 0.4rem;
+  border-radius: 5px;
+  border: 2px solid salmon;
+}
+
+.search input {
+  width: 10rem;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
