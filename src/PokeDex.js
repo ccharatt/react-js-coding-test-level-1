@@ -4,6 +4,8 @@ import ReactLoading from "react-loading";
 import axios from "axios";
 import Modal from "react-modal";
 import Pagination from "./Pagination";
+import { BarChart, Bar, XAxis, YAxis, Tooltip } from "recharts";
+import ReactToPdf from "react-to-pdf";
 
 function PokeDex() {
   const [pokemons, setPokemons] = useState([]);
@@ -142,7 +144,7 @@ function PokeDex() {
           style={customStyles}
         >
           <div ref={ref}>
-            <img src={pokemonDetail.sprites.front_default} alt="" />
+            <img src={pokemonDetail.sprites.front_default} alt="pokemon" />
             <div className="flex">
               <div>
                 <table>
@@ -163,22 +165,22 @@ function PokeDex() {
                 </table>
               </div>
             </div>
+            <div>
+              <BarChart width={750} height={200} data={pokemonDetail.stats}>
+                <XAxis dataKey={"stat.name"} />
+                <YAxis />
+                <Tooltip />
+                <Bar dataKey={"base_stat"} fill="#fff89a" />
+              </BarChart>
+            </div>
           </div>
-          <div>
-            Requirement:
-            <ul>
-              <li>show the sprites front_default as the pokemon image</li>
-              <li>
-                Show the stats details - only stat.name and base_stat is
-                required in tabular format
-              </li>
-              <li>Create a bar chart based on the stats above</li>
-              <li>
-                Create a buttton to download the information generated in this
-                modal as pdf. (images and chart must be included)
-              </li>
-            </ul>
-          </div>
+          <ReactToPdf targetRef={ref} filename="pokemon.pdf">
+            {({ toPdf }) => (
+              <button className="genPdf" onClick={toPdf}>
+                Generate pdf
+              </button>
+            )}
+          </ReactToPdf>
         </Modal>
       )}
     </div>
