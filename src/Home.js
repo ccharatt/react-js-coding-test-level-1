@@ -9,6 +9,10 @@ function Home() {
     console.log("Image clicked");
   };
 
+  useEffect(() => {
+    text === "Ready!" ? setIsReady(true) : setIsReady(false);
+  }, [text])
+
   return (
     <div className="App">
       <header className="App-header">
